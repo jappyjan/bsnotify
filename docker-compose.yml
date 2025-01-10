@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  bsnotify:
+    build: .
+    #network_mode: "host" # Required to send broadcast packets on the host network
+    restart: unless-stopped
+    command: ${PRINTER_IP} ${PRINTER_SERIAL} ${LOCAL_ADDRESSES:-}
